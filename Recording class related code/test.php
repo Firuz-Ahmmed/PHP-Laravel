@@ -1,32 +1,32 @@
 <?php
-include('database.php');
-$obj=new Query();
-$result=$obj->getData('user');
-echo '<pre>';
-print_r($result);
-class Human{
-    public $name;
-    public $age;
-    public function __construct($personName,$personAge=0){
-        $this->name=$personName;
-        $this->age=$personAge;
-        $this->sayName();
-    }
-    public function sayName(){
-        echo "Assalamu walaikum,My name is {$this->name}\n";
-        $this->sayAge();
-    }
-    public function sayAge(){
-        if(($this->age)!=0){
-            echo "My age is {$this->age}\n";
-        }
-        else{
-            echo "Age is not given when create an object";
-        }
-    }
-}
-$h1=new Human("Firuz","21");
-$h2=new Human("Latif");
+// include('database.php');
+// $obj=new Query();
+// $result=$obj->getData('user');
+// echo '<pre>';
+// print_r($result);
+// class Human{
+//     public $name;
+//     public $age;
+//     public function __construct($personName,$personAge=0){
+//         $this->name=$personName;
+//         $this->age=$personAge;
+//         $this->sayName();
+//     }
+//     public function sayName(){
+//         echo "Assalamu walaikum,My name is {$this->name}\n";
+//         $this->sayAge();
+//     }
+//     public function sayAge(){
+//         if(($this->age)!=0){
+//             echo "My age is {$this->age}\n";
+//         }
+//         else{
+//             echo "Age is not given when create an object";
+//         }
+//     }
+// }
+// $h1=new Human("Firuz","21");
+// $h2=new Human("Latif");
 
 
 
