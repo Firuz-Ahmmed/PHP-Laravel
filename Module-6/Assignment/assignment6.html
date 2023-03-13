@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Form Example</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+
+</head>
+<body>
+
+  <div class="container mt-5">
+    <form action="submit-form.php" method="post" enctype="multipart/form-data">
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="profile-picture" class="form-label">Profile Picture:</label>
+        <input type="file" id="profile-picture" name="profile-picture" class="form-control">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-f8WpCJLxlNc01lvJTPwIX8pyWIK/7mxs+Ilb/0Txy1hXpWJlGMLcexlEmEdCvz8ZiWkGSwzOrnMB1B3jq6yXcg==" crossorigin="anonymous" referrerpolicy="no-ref
