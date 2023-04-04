@@ -1,0 +1,12 @@
+Includes a header, a navigation bar, an image, and a section for displaying blog posts. The code uses the Tailwind CSS framework to apply styling to the elements.
+
+The header section includes a title tag, which is used to specify the title of the HTML document. It also includes a script tag that loads the Tailwind CSS library from a CDN.
+
+The navigation bar is contained within a div element with the classes "relative bg-white shadow-xl". It is implemented using an unordered list (ul) element with three list items (li) that contain links to different pages of the website. The links are styled using Tailwind CSS classes to apply a hover effect and a background color.
+
+The image is displayed using an img tag with the classes "h-52 w-full border max-w-7xl z-1 relative mx-auto mt-4". The image source is a URL that points to an image hosted on Unsplash. The image is styled to have a height of 52 pixels, a border, and a maximum width of 7xl.
+
+The section for displaying blog posts is implemented using three div elements with the classes "h-72 w-1/5 shadow-md rounded-2xl". Each div contains an image, a title, and a link to view the full blog post. The images and titles are styled to have a maximum height of 40 pixels, and the link is styled to fill the entire div element. The three divs are displayed in a flex container with a gap of 8 pixels between them.
+
+Chalanged: Organaize the different different portion correctly.
+Overcome: put them in DIV and use flex.
