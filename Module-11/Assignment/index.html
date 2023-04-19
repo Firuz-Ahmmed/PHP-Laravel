@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Module 11 Assignment</title>
+</head>
+
+<body class="bg-gray-200">
+    <div class="container row">
+        <form action="">
+        <div class=" flex justify-center mt-10 ">
+            <label for=" Number">Given Number: &nbsp&nbsp&nbsp</label><br>
+            <input type="number" id="Number" name="Number"><br>
+            <button type="button" class="border 4px bg-green-400 " onclick="multiplicationTable();">Button</button>
+        </div>
+    </form>
+    </div>
+<script>
+  function multiplicationTable() {
+  const ButtonId = document.getElementById("Number");
+  const ButtonValue = ButtonId.value;
+  const table = document.createElement('table');
+  
+  for (let i = 1; i <= 10; i++) {
+    const row = document.createElement('tr');
+    const cell1 = document.createElement('td');
+    const cell2 = document.createElement('td');
+    cell1.textContent = ButtonValue + ' x ' + i +' = ';
+    cell2.textContent = ButtonValue * i;
+    row.appendChild(cell1);
+    row.appendChild(cell2);
+    table.appendChild(row);
+  }
+
+  // add the table to the HTML document
+  const container = document.querySelector('.container');
+  container.appendChild(table);
+}
+
+</script>
+</body>
+
+</html>
