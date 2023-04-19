@@ -23,6 +23,11 @@
   const ButtonId = document.getElementById("Number");
   const ButtonValue = ButtonId.value;
   const table = document.createElement('table');
+   // check if a table already exists and remove it
+   const existingTable = document.querySelector('table');
+  if (existingTable) {
+    existingTable.remove();
+  }
   
   for (let i = 1; i <= 10; i++) {
     const row = document.createElement('tr');
