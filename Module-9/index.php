@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <div class="relative bg-white shadow-xl">
+    <div class="relative bg-white shadow-xl ">
         <!-- navbar div start -->
         <div class="w-full backdrop-blur-sm backdrop-hue-rotate-180 ">
             <div class="z-1 relative mx-auto flex h-16 max-w-7xl items-center justify-between px-5 text-black ">
