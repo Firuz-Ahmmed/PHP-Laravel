@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\module17PracticeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\practiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +17,4 @@ use App\Http\Controllers\practiceController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/practice',[practiceController::class,'index']);
+Route::get('/practice',[module17PracticeController::class,'index']);
