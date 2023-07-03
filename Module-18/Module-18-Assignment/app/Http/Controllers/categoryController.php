@@ -7,12 +7,18 @@ use Illuminate\Http\Request;
 
 class categoryController extends Controller
 {
+    public function index()
+{
+    $categories = categorie::with('latestPost')->get();
+    return view('category_posts', ['categories' => $categories]);
+}
+
     public function getPostsByCategory($id)
     {
         $category = categorie::findOrFail($id);
-        $posts = $category->posts;
+        $posts = $category->description;
 
-        return view('category_posts', compact('category', 'posts'));
+        // return view('category_post', compact('category', 'posts'));
     }
 
 }
