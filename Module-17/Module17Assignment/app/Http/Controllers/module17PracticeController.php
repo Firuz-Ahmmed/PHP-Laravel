@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Query\JoinClause;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -45,5 +46,21 @@ class module17PracticeController extends Controller
         //     ->where('id', 3)
         //     ->increment('min_to_read');
         // Print_r($affectedRows);
+        $products1 = DB::table('products')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->join('brands', 'products.brand_id', '=', 'brands.id')
+            ->get();
+        $products = DB::table('products')
+            ->join('categories', function (JoinClause $join) {
+                $join->on('products.category_id', '=', 'categories.id')
+                    ->where('products.price', '>', 2000);
+            })
+            ->join('brands', function (JoinClause $join) {
+                $join->on('products.brand_id', '=', 'brands.id')
+                    ->where('brands.brandName', '=', 'Hatil');
+            })
+            ->get();
+
+        return $products;
     }
 }
