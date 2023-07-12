@@ -20,5 +20,5 @@ class categoryController extends Controller
 
         // return view('category_post', compact('category', 'posts'));
     }
-
+  
 }
