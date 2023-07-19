@@ -1,0 +1,1 @@
+<img src="{{asset('images/Firuz Ahmmed.jpg')}}" alt="Firuz" width="100px">
