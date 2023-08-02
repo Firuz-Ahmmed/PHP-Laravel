@@ -10,6 +10,27 @@ use Illuminate\Support\Facades\Mail;
 
 class userController extends Controller
 {
+    function LoginPage(){
+        return view('pages.auth.login-page');
+    }
+
+    function RegistrationPage(){
+        return view('pages.auth.registration-page');
+    }
+    function SendOtpPage(){
+        return view('pages.auth.send-otp-page');
+    }
+    function VerifyOTPPage(){
+        return view('pages.auth.verify-otp-page');
+    }
+
+    function ResetPasswordPage(){
+        return view('pages.auth.reset-pass-page');
+    }
+
+    function ProfilePage(){
+        return view('pages.dashboard.profile-page');
+    }
     public function UserRegistration(Request $request)
     {
 
@@ -101,7 +122,7 @@ class userController extends Controller
     function ResetPassword(Request $request){
         try{
             $email=$request->header('email');
-            $password=$request->header('password');
+            $password=$request->input('password');
             User::where('email','=',$email)->update(['password'=>$password]);
             return response()->json([
               'status' => "success",

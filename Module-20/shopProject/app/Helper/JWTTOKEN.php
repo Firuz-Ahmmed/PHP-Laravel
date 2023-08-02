@@ -39,7 +39,8 @@ class JWTTOKEN
             //dd($key);
             //$token = request()->header('Authorization');
             $decode = JWT::decode($token, new Key($key,'HS256'));
-           // dd($decode);
+            //dd($token);
+            //dd($decode);
             return $decode->userEmail;
         }
         catch (\Exception $e){

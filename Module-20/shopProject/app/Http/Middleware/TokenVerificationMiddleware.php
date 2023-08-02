@@ -16,10 +16,12 @@ class TokenVerificationMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $token = $request->header('token');
+        //dd($token);
         $result=JWTTOKEN::VerifyToken($token);
        //dd($result);
         if ($result=="Unauthorised") {
             return response()->json([
+              'status' => "error",
               'message' => 'Token not Verified'
             ],401); 
         }
