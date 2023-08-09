@@ -26,26 +26,40 @@
 
 
 <script>
-function SubmitLogin(){
-   async event.preventDefault();
-    let email=document.getElementById('email').value;
-    let password=document.getElementById('pw').value;
-    if(email.length===0){
-        errorToast("Email is Required");
-    }
-    if(password.length===0){
-        errorToast("Password is Required");
-    }
-    else{
-        showLoader();
-    }
+// async function SubmitLogin(){
+    
+//     let email=document.getElementById('email').value;
+//     let password=document.getElementById('pw').value;
+//     if(email.length===0){
+//         errorToast("Email is Required");
+//     }
+//     if(password.length===0){
+//         errorToast("Password is Required");
+//     }
+//     else{
+//         showLoader();
+//         let res=await axios.post("/user-login",
+//         {
+//             email:email,
+//             password:password
+//         });
+//         //console.log(res);
+//         hideLoader()
+//         if(res.status===200 && res.data['status']==='success'){
+//             window.location.href="/dashboard";
+//         }
+//         else{
+//             errorToast(res.data['message']);
+//         }
+//     }
+    
 
-    //console.log(email);
-}
+//     //console.log(pw);
+// }
 
 //   async function SubmitLogin() {
 //             let email=document.getElementById('email').value;
-//             let password=document.getElementById('password').value;
+//             let password=document.getElementById('pw').value;
 
 //             if(email.length===0){
 //                 errorToast("Email is required");
@@ -56,7 +70,7 @@ function SubmitLogin(){
 //             else{
 //                 showLoader();
 //                 let res=await axios.post("/user-login",{email:email, password:password});
-//                 hideLoader()
+//                 hideLoader();
 //                 if(res.status===200 && res.data['status']==='success'){
 //                     window.location.href="/dashboard";
 //                 }
@@ -65,5 +79,35 @@ function SubmitLogin(){
 //                 }
 //             }
 //     }
+async function SubmitLogin() {
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('pw').value;
+
+    if (email.length === 0) {
+        errorToast("Email is required");
+    } else if (password.length === 0) {
+        errorToast("Password is required");
+    } else {
+        showLoader();
+        try {
+            let response = await axios.post("/user-login", {
+                email: email,
+                password: password
+            });
+
+            hideLoader();
+
+            if (response.status === 200 && response.data['status'] === 'success') {
+                window.location.href = "/dashboard";
+            } else {
+                errorToast(response.data['message']);
+            }
+        } catch (error) {
+            hideLoader();
+            errorToast("An error occurred during login");
+            console.error(error);
+        }
+    }
+}
 
 </script>
